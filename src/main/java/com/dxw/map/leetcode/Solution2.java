@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
- * leetcode 350
+ * leetcode_303 350
  */
 class Solution2 {
     public int[] intersect(int[] nums1, int[] nums2) {

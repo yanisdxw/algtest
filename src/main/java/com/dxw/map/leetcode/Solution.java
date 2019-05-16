@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 /**
- * leetcode 349
+ * leetcode_303 349
  */
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
