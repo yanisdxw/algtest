@@ -40,6 +40,7 @@ public class InsertionSort {
             for ( ; j > 0 && arr[j-1].compareTo(e)>0; j--) {
                 arr[j] = arr[j-1];
             }
+            //找到合适的位置（e比前面的元素大，比后面的元素小）再把元素插进去
             arr[j] = e;
         }
     }
