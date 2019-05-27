@@ -1,8 +1,13 @@
-package com.dxw.Graph.ReadGraph;
+package com.dxw.GraphWeight.ReadGraph;
 
 import com.dxw.Graph.GraphImpl.Graph;
+import com.dxw.GraphWeight.Edge;
+import com.dxw.GraphWeight.WeightedGraph;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.NoSuchElementException;
@@ -11,7 +16,7 @@ import java.util.Scanner;
 public class ReadGraph {
     private Scanner scanner;
 
-    public ReadGraph(Graph graph, String filename){
+    public ReadGraph(WeightedGraph<Double> graph, String filename){
 
         readFile(filename);
 
@@ -28,9 +33,10 @@ public class ReadGraph {
             for (int i = 0; i < E; i++) {
                 int v = scanner.nextInt();
                 int w = scanner.nextInt();
+                Double weight = scanner.nextDouble();
                 assert v >= 0 && v < V;
                 assert w >= 0 && w < V;
-                graph.addEdge(v, w);
+                graph.addEdge(new Edge<Double>(v, w, weight));
             }
         }
         catch (InputMismatchException e) {
