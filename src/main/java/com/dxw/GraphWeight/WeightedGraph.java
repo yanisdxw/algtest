@@ -6,5 +6,5 @@ public interface WeightedGraph<Weight extends Number & Comparable> {
     public void addEdge(Edge<Weight> e);
     boolean hasEdge(int v, int w);
     void show();
-    public Iterable<Integer> adj(int v);
+    public Iterable<Edge<Weight>> adj(int v);
 }
