@@ -37,6 +37,7 @@ public class ReadGraph {
                 assert v >= 0 && v < V;
                 assert w >= 0 && w < V;
                 graph.addEdge(new Edge<Double>(v, w, weight));
+
             }
         }
         catch (InputMismatchException e) {

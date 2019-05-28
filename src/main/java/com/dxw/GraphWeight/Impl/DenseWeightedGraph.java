@@ -55,7 +55,7 @@ public class DenseWeightedGraph<Weight extends Number & Comparable> implements W
 
         g[e.v()][e.w()] = new Edge(e);
         if(!directed){
-            g[e.w()][e.v()] = new Edge(e);
+            g[e.w()][e.v()] = new Edge(e.w(),e.v(),e.wt());
         }
         m++;
     }
