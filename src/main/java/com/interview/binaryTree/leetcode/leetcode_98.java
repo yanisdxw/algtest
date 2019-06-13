@@ -20,4 +20,8 @@ public class leetcode_98 {
         //右孩子的maxNode不变,minNode更新为父节点
         return isValidBST(node.left, minNode, node) && isValidBST(node.right, node, maxNode);
     }
+
+    public static void main(String[] args) {
+
+    }
 }

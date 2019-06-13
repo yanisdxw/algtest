@@ -2,9 +2,24 @@ package com.interview.linkedList.leetcode;
 
 import com.interview.linkedList.ListNode;
 
-public class leetcode_21 {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+public class leetcode_23 {
+    public ListNode mergeKLists(ListNode[] lists) {
 
+        if(lists.length==0||lists==null){
+            return null;
+        }
+
+        ListNode dummyhead = new ListNode(-100000);
+
+        for(int i=0;i<lists.length;i++){
+            mergeTwoLists(dummyhead,lists[i]);
+        }
+
+        return dummyhead.next;
+
+    }
+
+    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
         if(l1==null)
             return l2;

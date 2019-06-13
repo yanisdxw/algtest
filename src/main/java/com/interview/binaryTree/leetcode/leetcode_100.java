@@ -13,4 +13,8 @@ public class leetcode_100 {
 
         return false;
     }
+
+    public static void main(String[] args) {
+
+    }
 }

@@ -14,4 +14,8 @@ public class leetcode_101 {
             return false;
         return isSymmetric(left.left,right.right) && isSymmetric(left.right,right.left);
     }
+
+    public static void main(String[] args) {
+
+    }
 }
