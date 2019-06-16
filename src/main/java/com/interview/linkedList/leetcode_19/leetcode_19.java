@@ -20,6 +20,7 @@ public class leetcode_19 {
             p = p.next;
             n--;
         }
+        System.out.println(p.val);
         ListNode cur = dummyHead;
         while (p!=null){
             cur = cur.next;
@@ -29,5 +30,13 @@ public class leetcode_19 {
         cur.next = cur.next.next;
         delNode.next = null;
         return dummyHead.next;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1,2,3};
+        ListNode node = ListNode.createLinkedList(arr,arr.length);
+        ListNode.printLinkedList(node);
+        leetcode_19 solution = new leetcode_19();
+        solution.removeNthFromEnd(node,2);
     }
 }

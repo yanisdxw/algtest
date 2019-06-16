@@ -2,7 +2,7 @@ package com.interview.linkedList.leetcode_206;
 
 import com.interview.linkedList.ListNode;
 
-public class leetcode_206 {
+public class  leetcode_206 {
     public static ListNode reverseList(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
