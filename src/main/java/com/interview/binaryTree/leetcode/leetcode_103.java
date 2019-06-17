@@ -6,7 +6,7 @@ import com.interview.stack.TreeNode;
 import java.util.*;
 
 public class leetcode_103 {
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    public List<List<Integer>> LevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         Map<Integer,ArrayList<Integer>> map = new HashMap<>();
         Queue<Pair<TreeNode,Integer>> queue = new LinkedList<>();
