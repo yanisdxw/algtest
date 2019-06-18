@@ -17,4 +17,8 @@ public class leetcode_111 {
             return 1;
         }
     }
+
+    public static void main(String[] args) {
+
+    }
 }
