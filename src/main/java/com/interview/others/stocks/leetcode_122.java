@@ -1,4 +1,4 @@
-package com.interview.others;
+package com.interview.others.stocks;
 
 public class leetcode_122 {
     public int maxProfit(int[] prices) {

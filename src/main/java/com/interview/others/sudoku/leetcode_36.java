@@ -1,4 +1,4 @@
-package com.interview.others;
+package com.interview.others.sudoku;
 
  public class leetcode_36 {
      public void solveSudoku(char[][] board) {
