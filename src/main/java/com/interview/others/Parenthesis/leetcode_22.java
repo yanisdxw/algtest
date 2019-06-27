@@ -15,6 +15,7 @@ public class leetcode_22 {
     private void gen(int n, int left, int right, String result){
         if(left==n && right==n) {
             res.add(result);
+            return;
         }
         if(left<n){
             gen(n,left+1,right,result+"(");
