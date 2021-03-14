@@ -99,5 +99,9 @@ public class Bitmap {
         for (int i = 0; i < bitmap.bitmap.length; i++) {
             System.out.print(bitmap.bitmap[i]+" ");
         }
+        System.out.println();
+        int a = 10;
+        int b = 1<<a;
+        System.out.println(b);
     }
 }
