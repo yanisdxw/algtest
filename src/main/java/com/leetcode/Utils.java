@@ -1,6 +1,13 @@
 package com.leetcode;
 
 public class Utils {
+
+    public static void swap(int i, int j, int[] nums){
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+
     public static void printArray(int[] nums){
         System.out.print("[");
         for (int i = 0; i < nums.length; i++) {
