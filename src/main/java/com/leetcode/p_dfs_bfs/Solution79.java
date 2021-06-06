@@ -1,4 +1,4 @@
-package com.leetcode.p_dfs;
+package com.leetcode.p_dfs_bfs;
 
 public class Solution79 {
     boolean find = false;

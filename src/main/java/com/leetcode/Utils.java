@@ -1,5 +1,7 @@
 package com.leetcode;
 
+import com.leetcode.po.ListNode;
+
 public class Utils {
 
     public static void swap(int i, int j, int[] nums){
@@ -41,5 +43,14 @@ public class Utils {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    public static void printListNode(ListNode head){
+        ListNode cur = head;
+        while (cur!=null){
+            System.out.print(cur.val);
+            if(cur.next!=null) System.out.print("-->");
+            cur = cur.next;
+        }
     }
 }

@@ -95,5 +95,7 @@ public class Bitmap {
         for (int i = 0; i < sorted.size(); i++) {
             System.out.print(sorted.get(i)+" ");
         }
+
+
     }
 }
