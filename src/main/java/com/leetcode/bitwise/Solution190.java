@@ -1,4 +1,4 @@
-package com.leetcode.p_math;
+package com.leetcode.bitwise;
 
 /**
  * 190. 颠倒二进制位

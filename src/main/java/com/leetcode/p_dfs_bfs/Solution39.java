@@ -40,6 +40,7 @@ public class Solution39 {
         }
         if(target==0){
             ans.add(new ArrayList<>(path));
+            return;
         }
         for (int i = begin; i < nums.length; i++) {
             path.add(nums[i]);

@@ -27,7 +27,7 @@ public class Solution153 {
         if(nums.length==1) return nums[0];
         int l = 0;
         int r = nums.length-1;
-        //当r==l,循环停止
+        //当r==l,循环停止【当区间长度为1时，即可停止二分查找】故l<r而不是l<=r
         //因为我们要遍历到l==r，所以这里有开区间写法
         while (l<r){
             int mid = l + (r-l)/2;

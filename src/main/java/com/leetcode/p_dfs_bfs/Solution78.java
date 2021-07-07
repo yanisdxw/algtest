@@ -15,19 +15,19 @@ import java.util.List;
  */
 public class Solution78 {
     List<List<Integer>> ans = new ArrayList<>();
-    List<Integer> path = new ArrayList<>();
     public List<List<Integer>> subsets(int[] nums) {
+        List<Integer> path = new ArrayList<>();
         //深度优先遍历，ans存储所有遍历的元素
-        dfs(0, nums);
+        dfs(nums,0,path);
         return ans;
     }
 
     //遍历获取所有包含num[pos]的数组并放入ans中
-    private void dfs(int pos, int[] nums){
+    private void dfs(int[] nums, int pos, List<Integer> path){
         ans.add(new ArrayList<Integer>(path));
         for (int i = pos; i < nums.length; i++) {
             path.add(nums[i]);
-            dfs(i+1, nums);
+            dfs(nums,i+1, path);
             path.remove(path.size()-1);
         }
     }

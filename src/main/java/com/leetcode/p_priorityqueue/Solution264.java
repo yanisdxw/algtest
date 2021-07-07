@@ -22,17 +22,39 @@ import java.util.*;
  * 解释：1 通常被视为丑数。
  */
 public class Solution264 {
+    /**
+     *  三指针法
+     *     public int nthUglyNumber(int n) {
+     *         int[] nums = new int[n+1];
+     *         nums[1] = 1;
+     *         for(int x=1,y=1,z=1,i=2;i<=n;i++){
+     *             int a = nums[x]*2;
+     *             int b = nums[y]*3;
+     *             int c = nums[z]*5;
+     *             int min = Math.min(Math.min(a,b),c);
+     *             if(min==a) x++;
+     *             if(min==b) y++;
+     *             if(min==c) z++;
+     *             nums[i] = min;
+     *         }
+     *         return nums[n];
+     *     }
+     */
+
+    /**
+     * 优先队列
+     */
     int [] nums = new int[]{2,3,5};
     public int nthUglyNumber(int n) {
-        Queue<Integer> priorityQueue = new PriorityQueue<>();
-        Set<Integer> set = new HashSet<>();
-        priorityQueue.add(1);
-        set.add(1);
-        for (int i = 0; i <= n; i++) {
-            int min = priorityQueue.poll();
-            if(i==n) return min;
+        Queue<Long> priorityQueue = new PriorityQueue<>();
+        Set<Long> set = new HashSet<>();
+        priorityQueue.add(1L);
+        set.add(1L);
+        for (int i = 1; i <= n; i++) {
+            long min = priorityQueue.poll();
+            if(i==n) return (int) min;
             for(int num :nums){
-                int next = min*num;
+                long next = min*num;
                 if(!set.contains(next)){
                     set.add(next);
                     priorityQueue.add(next);

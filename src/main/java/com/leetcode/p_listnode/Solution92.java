@@ -48,6 +48,16 @@ public class Solution92 {
             cur = next;
         }
     }
+    //翻转链表的递归写法
+    public ListNode reverseLinkedList2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode newHead = reverseLinkedList2(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
 
 
     public static void main(String[] args) {

@@ -36,6 +36,8 @@ public class Solution96 {
         // i充当了n的位置
         for (int i = 2; i < n+1; i++) {
             for (int j = 1; j <=i ; j++) {
+                //g[j-i]:左序列构建左子树
+                //g[i-j]:右序列构建由子树
                 g[i] += g[j-1]*g[i-j];
             }
         }

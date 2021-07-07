@@ -20,22 +20,22 @@ import java.util.List;
 public class Solution90 {
 
     List<List<Integer>> ans = new ArrayList<>();
-    List<Integer> path = new ArrayList<>();
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         //深度优先遍历，ans存储所有遍历的元素
         Arrays.sort(nums);
-        dfs(0, nums);
+        List<Integer> path = new ArrayList<>();
+        dfs(nums,0, path);
         return ans;
     }
 
     //遍历获取所有包含num[pos]的数组并放入ans中
-    private void dfs(int pos, int[] nums){
+    private void dfs(int[] nums, int pos, List<Integer> path){
         ans.add(new ArrayList<Integer>(path));
         for (int i = pos; i < nums.length; i++) {
             //如果与前一个元素相同，则不加入到path中
             if(i!=pos && nums[i]==nums[i-1]) continue;
             path.add(nums[i]);
-            dfs(i+1, nums);
+            dfs(nums,i+1, path);
             path.remove(path.size()-1);
         }
     }

@@ -1,4 +1,4 @@
-package com.leetcode.p_math;
+package com.leetcode.bitwise;
 
 /**
  * 位1的个数
@@ -38,10 +38,17 @@ public class Solution191 {
     public int hammingWeight3(int n) {
         int ans = 0;
         // n & (n - 1) ，这个代码可以把 n 的二进制中，最后一个出现的 1 改写成 0。
+        // 比如 10 --> 1010 -->  c(10) = 2
+        //      8  --> 1000 -->  c(8) = 1
+        //      0  --> 0000 -->  c(0) = 0
         while (n!=0){
             ans += 1;
             n&=(n-1);
         }
         return ans;
+    }
+
+    public static void main(String[] args) {
+        int ans = new Solution191().hammingWeight3(10);
     }
 }

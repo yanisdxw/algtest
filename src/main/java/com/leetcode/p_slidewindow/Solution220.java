@@ -41,9 +41,26 @@ public class Solution220 {
         return false;
     }
 
+    public boolean containsNearbyAlmostDuplicate2(int[] nums, int k, int t){
+        TreeSet<Long> set = new TreeSet<>();
+        int l = 0; int r = 0;
+        while (r<nums.length){
+            Long u  = nums[r++]*1L;
+            Long low = set.floor(u); //low：小于等于u的最大值
+            Long high = set.ceiling(u); //high：大于等于u的最小值
+            if(low!=null && u-low<=t*1L) return true;
+            if(high!=null && high-u<=t*1L) return true;
+            set.add(u);
+            while (r-l>k){
+                set.remove(nums[l++]*1L);
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         int[] nums = new int[]{1,5,9,1,5,9};
-        boolean ans = new Solution220().containsNearbyAlmostDuplicate(nums,2,3);
+        boolean ans = new Solution220().containsNearbyAlmostDuplicate2(nums,2,3);
         System.out.println(ans);
 
         int[] nums2 = new int[]{1,0,1,1};

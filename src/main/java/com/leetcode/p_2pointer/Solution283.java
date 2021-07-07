@@ -1,4 +1,4 @@
-package com.leetcode.p_array;
+package com.leetcode.p_2pointer;
 
 import com.leetcode.Utils;
 

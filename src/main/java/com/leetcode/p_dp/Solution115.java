@@ -16,29 +16,32 @@ public class Solution115 {
 
     public int numDistinct(String s, String t) {
         //设dp[i][j]为T前i字符串可以由S前j字符串组成最多个数.
-        int[][] dp = new int[t.length()+1][s.length()+1];
+        int m = t.length();
+        int n = s.length();
+        int[][] dp = new int[m+1][n+1];
         //初始化dp为0
-        for (int j = 0; j < s.length(); j++) {
+        for (int j = 0; j < n; j++) {
             dp[0][j] = 1;
         }
 //        for (int i = 0; i < t.length(); i++) {
 //            dp[i][0] = 0;
 //        }
-        for (int i = 1; i <= t.length(); i++) {
-            for (int j = 1; j <= s.length(); j++) {
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
                 if(t.charAt(i-1)==s.charAt(j-1)){
                     dp[i][j] = dp[i][j-1] + dp[i-1][j-1];
                 }else {
                     dp[i][j] = dp[i][j-1];
                 }
+                System.out.println("dp["+i+"]["+j+"]:"+dp[i][j]);
             }
         }
-        return dp[t.length()][s.length()];
+        return dp[m][n];
     }
 
     public static void main(String[] args) {
-        String s = "rabbbit";
-        String t = "rabbit";
+        String s = "A0B0";
+        String t = "AB";
         int ans = new Solution115().numDistinct(s,t);
         System.out.println(ans);
     }

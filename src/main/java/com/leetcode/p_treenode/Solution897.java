@@ -32,4 +32,24 @@ public class Solution897 {
         stack.push(root);
         inorderTraversal(root.right);
     }
+
+    TreeNode pre = null;
+    public TreeNode increasingBST2(TreeNode root) {
+        TreeNode dummyNode = new TreeNode(-1);
+        pre = dummyNode;
+        inOrderTraversal2(root);
+        return dummyNode.right;
+    }
+    //最左边的节点最后插入
+    //先遍历最大值
+    private void inOrderTraversal2(TreeNode root){
+        if(root==null){
+            return;
+        }
+        inOrderTraversal2(root.left);
+        root.left = null;
+        pre.right = pre;
+        pre = root;
+        inOrderTraversal2(root.right);
+    }
 }

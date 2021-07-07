@@ -60,7 +60,24 @@ public class Solution144 {
         Collections.reverse(ans);
         return ans;
     }
-
+    //中序遍历
+    public List<Integer> inorderTraversal(TreeNode root){
+        List<Integer> ans = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur= root;
+        while (cur!=null || !stack.isEmpty()){
+            if(cur!=null){
+                stack.push(cur);
+                cur = cur.left;
+            }else {
+                cur = stack.pop();
+                //遍历完左节点后才记录中间节点
+                ans.add(cur.val);
+                cur = cur.right;
+            }
+        }
+        return ans;
+    }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);

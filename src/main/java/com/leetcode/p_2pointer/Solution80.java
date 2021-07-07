@@ -1,4 +1,4 @@
-package com.leetcode.p_array;
+package com.leetcode.p_2pointer;
 
 import com.leetcode.Utils;
 
@@ -26,35 +26,48 @@ public class Solution80 {
         if(nums.length==1){
             return 1;
         }
-        int cur = 0; //当前遍历的位置
-        int pre = 0; //上一个位置正确的位置
+        int p = 0; //上一个位置正确的位置
         int times = 1; //cur遍历时当前值重复的个数
         for (int i = 1; i < nums.length; i++) {
-            if(nums[i]==nums[cur]){
+            if(nums[i]==nums[i-1]){
                 times++;
 
             }else {
                 times=1;
             }
-            cur++;
-            if(cur-pre>=2){
-                nums[pre+1] = nums[i];
+            if(i-p>=2){
+                nums[p+1] = nums[i];
             }
             if(times<=2){
-                pre++;
+                p++;
             }
         }
-        return pre+1;
+        return p+1;
+    }
+
+    public int removeDuplicates2(int[] nums){
+        int p = 2;
+        for (int i = 2; i < nums.length; i++) {
+            if(nums[i]!=nums[p-2]){
+                nums[p++] = nums[i];
+            }
+        }
+        return p;
     }
 
     public static void main(String[] args) {
+        int[] nums0 = new int[]{1,2};
+        int ans0 = new Solution80().removeDuplicates2(nums0);
+        System.out.println(ans0);
+        Utils.printArray(nums0);
+        System.out.println();
         int[] nums = new int[]{1,1,1,2,2,3};
-        int ans = new Solution80().removeDuplicates(nums);
+        int ans = new Solution80().removeDuplicates2(nums);
         System.out.println(ans);
         Utils.printArray(nums);
         System.out.println();
         int[] nums1 = new int[]{0,0,1,1,1,1,2,3,3};
-        int ans1 = new Solution80().removeDuplicates(nums1);
+        int ans1 = new Solution80().removeDuplicates2(nums1);
         System.out.println(ans1);
         Utils.printArray(nums1);
     }
