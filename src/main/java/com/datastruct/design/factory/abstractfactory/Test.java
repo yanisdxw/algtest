@@ -1,4 +1,4 @@
-package com.design.pattern.creational.abstractfactory;
+package com.datastruct.design.factory.abstractfactory;
 
 /**
  * Created by geely
@@ -8,12 +8,6 @@ public class Test {
         CourseFactory courseFactory = new JavaCourseFactory();
         Video video = courseFactory.getVideo();
         Article article = courseFactory.getArticle();
-        video.produce();
-        article.produce();
-
-        courseFactory = new PythonCourseFactory();
-        video = courseFactory.getVideo();
-        article = courseFactory.getArticle();
         video.produce();
         article.produce();
     }
