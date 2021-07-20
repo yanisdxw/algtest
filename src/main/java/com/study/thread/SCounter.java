@@ -17,4 +17,12 @@ public class SCounter implements Counter {
     public int getCount(){
         return count;
     }
+
+    public static void main(String[] args) {
+        SCounter counter = new SCounter();
+        MyThread myThread1 = new MyThread(counter);
+        MyThread myThread2 = new MyThread(counter);
+        myThread1.start();
+        myThread2.start();
+    }
 }

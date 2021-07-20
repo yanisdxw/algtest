@@ -20,39 +20,51 @@ package com.leetcode.p_math;
  * 解释：8 = 2 × 2 × 2
  */
 public class Solution263 {
+
+    /**
+     *
+     *     public boolean isUgly(int n) {
+     *         if(n==0) return false;
+     *         if(n==1) return true;
+     *         int mod;
+     *         int a;
+     *         while (true){
+     *             mod = n%5;
+     *             a = n/5;
+     *             if(mod==0 && a==1){
+     *                 return true;
+     *             }
+     *             if(mod!=0) break;
+     *             n = a;
+     *         }
+     *         while (true){
+     *             mod = n%3;
+     *             a = n/3;
+     *             if(mod==0 && a==1){
+     *                 return true;
+     *             }
+     *             if(mod!=0) break;
+     *             n = a;
+     *         }
+     *         while (true){
+     *             mod = n%2;
+     *             a = n/2;
+     *             if(mod==0 && a==1){
+     *                 return true;
+     *             }
+     *             if(mod!=0) break;
+     *             n = a;
+     *         }
+     *         return false;
+     *     }
+     * */
+
     public boolean isUgly(int n) {
-        if(n==0) return false;
-        if(n==1) return true;
-        int mod;
-        int a;
-        while (true){
-            mod = n%5;
-            a = n/5;
-            if(mod==0 && a==1){
-                return true;
-            }
-            if(mod!=0) break;
-            n = a;
-        }
-        while (true){
-            mod = n%3;
-            a = n/3;
-            if(mod==0 && a==1){
-                return true;
-            }
-            if(mod!=0) break;
-            n = a;
-        }
-        while (true){
-            mod = n%2;
-            a = n/2;
-            if(mod==0 && a==1){
-                return true;
-            }
-            if(mod!=0) break;
-            n = a;
-        }
-        return false;
+        if (n <= 0) return false;
+        while (n % 2 == 0) n /= 2;
+        while (n % 3 == 0) n /= 3;
+        while (n % 5 == 0) n /= 5;
+        return n == 1;
     }
 
     public static void main(String[] args) {

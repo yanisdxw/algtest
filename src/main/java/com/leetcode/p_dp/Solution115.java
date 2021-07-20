@@ -40,8 +40,8 @@ public class Solution115 {
     }
 
     public static void main(String[] args) {
-        String s = "A0B0";
-        String t = "AB";
+        String s = "babgbag";
+        String t = "bag";
         int ans = new Solution115().numDistinct(s,t);
         System.out.println(ans);
     }
