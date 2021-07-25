@@ -1,5 +1,8 @@
 package com.datastruct.sort;
 
+
+import java.util.Arrays;
+
 public class QuickSort {
     // 我们的算法类不允许产生任何实例
     private QuickSort(){}
@@ -51,7 +54,11 @@ public class QuickSort {
 
     // 测试 QuickSort
     public static void main(String[] args) {
-
+        int[] a = new int[]{5,2,4,1,3,7,6};
+        Integer[] arr = Arrays.stream(a).boxed().toArray(Integer[]::new);
+        int p = partition(arr,0,4);
+        System.out.println(p);
+        System.out.println(arr);
         return;
     }
 }

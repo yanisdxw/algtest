@@ -15,13 +15,11 @@ public class LRUHashtable<K,V> implements LRUCache<K,V> {
     private Entry first;//链表头
     private Entry last;//链表尾
 
-
     public LRUHashtable(int cacheSize) {
         this.currentSize = 0;
         this.cacheSize = cacheSize;
         this.nodes = new Hashtable<Object, Entry>(cacheSize);//缓存容器
     }
-
 
     /**
      * 将entry删除, 注意：删除操作只有在cache满了才会被执行
@@ -47,7 +45,6 @@ public class LRUHashtable<K,V> implements LRUCache<K,V> {
         //在hashtable中删除
         nodes.remove(key);
     }
-
 
     /**
      * 移动到链表头，表示这个节点是最新使用过的
@@ -90,7 +87,6 @@ public class LRUHashtable<K,V> implements LRUCache<K,V> {
         }
     }
 
-
     @Override
     public V get(K key) {
         Entry node = nodes.get(key);
@@ -100,7 +96,6 @@ public class LRUHashtable<K,V> implements LRUCache<K,V> {
         } else {
             return null;
         }
-
     }
 
     @Override
