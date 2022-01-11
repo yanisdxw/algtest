@@ -38,9 +38,7 @@ public class Test {
     }
 
     public static void main(String[] args) throws Exception {
-        Hello hello = new Hello(new String[]{"1","2"});
-        List<String> ans = hello.say();
-        System.out.println(ans);
+
     }
 
 }

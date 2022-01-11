@@ -91,7 +91,7 @@ public class Solution69 {
 
 
     public static void main(String[] args) {
-        int solution = new Solution69().mySqrt(81);
+        int solution = new Solution69().mySqrt2(81);
         System.out.println(solution);
     }
 }

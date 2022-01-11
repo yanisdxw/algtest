@@ -18,11 +18,31 @@ public class SCounter implements Counter {
         return count;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SCounter counter = new SCounter();
-        MyThread myThread1 = new MyThread(counter);
-        MyThread myThread2 = new MyThread(counter);
+        Thread myThread1 = new Thread(new Worker(counter));
+        Thread myThread2 = new Thread(new Worker(counter));
         myThread1.start();
         myThread2.start();
+    }
+
+    static class Worker implements Runnable {
+
+        private final Counter counter;
+
+        Worker(Counter counter){
+            this.counter = counter;
+        }
+
+        @Override
+        public void run() {
+            while (counter.getCount()<=10){
+                try {
+                    counter.count();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
