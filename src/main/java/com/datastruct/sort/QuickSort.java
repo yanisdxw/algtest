@@ -1,6 +1,8 @@
 package com.datastruct.sort;
 
 
+import com.leetcode.Utils;
+
 import java.util.Arrays;
 
 public class QuickSort {
@@ -54,11 +56,11 @@ public class QuickSort {
 
     // 测试 QuickSort
     public static void main(String[] args) {
-        int[] a = new int[]{5,2,4,1,3,7,6};
+        int[] a = new int[]{2,5,4,1,3,7,6,8};
         Integer[] arr = Arrays.stream(a).boxed().toArray(Integer[]::new);
-        int p = partition(arr,0,4);
+        int p = partition(arr,0,6);
         System.out.println(p);
-        System.out.println(arr);
+        Utils.printArray(arr);
         return;
     }
 }
