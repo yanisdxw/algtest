@@ -2,9 +2,16 @@ package com.algorithm.linklist;
 
 import java.util.*;
 
+/**
+ * 使用数组模拟链表
+ */
 public class 单链表 {
 
     private static int N = 100000;
+    // head 表示头结点的下标
+    // e[i] 表示节点i的值
+    // ne[i] 表示节点i的next指针是多少
+    // idx 存储当前已经用到了哪个点
     private static int[] e = new int[N];
     private static int[] ne = new int[N];
     private static int head;

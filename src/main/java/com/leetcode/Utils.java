@@ -21,6 +21,17 @@ public class Utils {
         System.out.print("]");
     }
 
+    public static void printArray(char[] nums){
+        System.out.print("[");
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i]);
+            if(i!=nums.length-1){
+                System.out.print(" ");
+            }
+        }
+        System.out.print("]");
+    }
+
     public static void printArray(Integer[] nums){
         System.out.print("[");
         for (int i = 0; i < nums.length; i++) {
