@@ -12,11 +12,11 @@ public class Dijkstra求最短路I {
     private static int[][] g = new int[N][N];
     private static boolean[] st = new boolean[N];
     private static int n = 0;
-    private static int max = 5000000;
+    private static int max = (int) 10e8;
 
     private static int dijkstra(){
         int[] dist = new int[N];
-        Arrays.fill(dist,0x3f);
+        Arrays.fill(dist,max);
         dist[1] = 0;
         for (int i = 0; i < n-1; i++) {
             int t = -1;

@@ -1,5 +1,6 @@
 package com.algorithm.search.dfs;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -10,6 +11,7 @@ public class N皇后 {
     private static int N = 20;
     private static int n;
     private static char[][] path;
+
     private static boolean[] col = new boolean[N];
     private static boolean[] dg = new boolean[N];
     private static boolean[] udg = new boolean[N];
@@ -19,9 +21,7 @@ public class N皇后 {
         n = sc.nextInt();
         path = new char[n][n];
         for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                path[i][j] = '.';
-            }
+            Arrays.fill(path,'.');
         }
         dfs(0);
     }
