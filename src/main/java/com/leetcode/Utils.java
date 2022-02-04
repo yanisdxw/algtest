@@ -32,6 +32,26 @@ public class Utils {
         System.out.print("]");
     }
 
+    public static String toBinaryString(int n, int bit){
+        String s = Integer.toBinaryString(n);
+        int i = s.length();
+        while (i++<bit){
+            s = "0"+s;
+        }
+        return s;
+    }
+
+    public static void printArray(boolean[] st){
+        System.out.print("[");
+        for (int i = 0; i < st.length; i++) {
+            System.out.print(st[i]);
+            if(i!=st.length-1){
+                System.out.print(" ");
+            }
+        }
+        System.out.print("]");
+    }
+
     public static void printArray(Integer[] nums){
         System.out.print("[");
         for (int i = 0; i < nums.length; i++) {
