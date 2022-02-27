@@ -2,6 +2,9 @@ package com.leetcode.p_treenode;
 
 import com.leetcode.po.TreeNode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 105. 从前序与中序遍历序列构造二叉树
  * 根据一棵树的前序遍历与中序遍历构造二叉树。
@@ -22,28 +25,18 @@ import com.leetcode.po.TreeNode;
  *    15   7
  */
 public class Solution105 {
+    private Map<Integer,Integer> pos = new HashMap<>();
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        return buildTreeHelper(preorder, 0, preorder.length, inorder, 0, inorder.length);
+        for(int i=0;i<inorder.length;i++) pos.put(inorder[i],i);
+        return build(preorder, inorder, 0, preorder.length-1, 0, inorder.length-1);
     }
 
-    private TreeNode buildTreeHelper(int[] preorder, int p_start, int p_end, int[] inorder, int i_start, int i_end) {
-        // preorder 为空，直接返回 null
-        if(p_start==p_end){
-            return null;
-        }
-        TreeNode root = new TreeNode(preorder[p_start]);
-        //在中序遍历中找到根节点的位置
-        int i_root_index = 0;
-        for (int i = i_start; i < i_end; i++) {
-            if(inorder[i]==preorder[p_start]){
-                i_root_index = i;
-            }
-        }
-        int leftNum = i_root_index - i_start;
-        //递归的构造左子树
-        root.left = buildTreeHelper(preorder, p_start + 1, p_start + leftNum + 1, inorder, i_start, i_root_index);
-        //递归的构造右子树
-        root.right = buildTreeHelper(preorder, p_start + leftNum + 1, p_end, inorder, i_root_index + 1, i_end);
+    private TreeNode build(int[] preorder, int[] inorder, int pl, int pr, int il, int ir){
+        if(pl>pr) return null;
+        TreeNode root = new TreeNode(preorder[pl]);
+        int k = pos.get(root.val);
+        root.left = build(preorder, inorder, pl+1, pl+1+k-1-il, il, k-1);
+        root.right = build(preorder, inorder, pl+1+k-1-il+1, pr ,k+1, ir);
         return root;
     }
 
