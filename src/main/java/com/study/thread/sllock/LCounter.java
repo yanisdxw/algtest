@@ -1,4 +1,6 @@
-package com.study.thread;
+package com.study.thread.sllock;
+
+import com.study.thread.MyThread;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

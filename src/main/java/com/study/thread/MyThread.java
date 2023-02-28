@@ -1,5 +1,7 @@
 package com.study.thread;
 
+import com.study.thread.sllock.Counter;
+
 public class MyThread extends Thread {
 
     private Counter counter;

@@ -5,6 +5,9 @@ import lombok.SneakyThrows;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * ReentrantLock和synchronized的用法
+ */
 public class CounterTest {
 
     static class Counter {

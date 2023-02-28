@@ -1,5 +1,8 @@
 package com.study.thread;
 
+/**
+ * 三个线程轮流打印ABC
+ */
 public class ThreeTreadNotify {
     public static class ThreadPrinter implements Runnable {
         private String name;

@@ -1,4 +1,4 @@
-package com.study.thread;
+package com.study.thread.sllock;
 
 public class SCounter implements Counter {
     int count = 0;
